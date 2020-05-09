@@ -25,10 +25,21 @@
   </a>
 </p>
 
-### vx
+### vx-primitives
 
-vx is a collection of reusable low-level visualization components. vx combines the power of d3 to
+vx-primitives is a collection of reusable cross-platform low-level visualization components. vx combines the power of d3 to
 generate your visualization with the benefits of react for updating the DOM.
+
+This repository is a working fork of [hshoff/vx](https://github.com/hshoff/vx) that adds support for react-primitives platforms.
+
+You can find the working development branch at: https://github.com/elemental-design/vx-primitives/tree/develop
+
+Supported platforms:
+
+- [x] [React Web](https://github.com/facebook/react/tree/master/packages/react-dom)
+- [x] [React Sketch.app](https://github.com/airbnb/react-sketchapp/)
+- [ ] [React Native](https://github.com/facebook/react-native)
+- [ ] [React Native Windows](https://github.com/Microsoft/react-native-windows)
 
 <br />
 
