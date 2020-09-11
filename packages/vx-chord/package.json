@@ -1,5 +1,5 @@
 {
-  "name": "@vx/chord",
+  "name": "@vx-primitives/chord",
   "version": "0.0.199",
   "description": "vx group",
   "sideEffects": false,

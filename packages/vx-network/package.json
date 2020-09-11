@@ -1,5 +1,5 @@
 {
-  "name": "@vx/network",
+  "name": "@vx-primitives/network",
   "version": "0.0.199",
   "description": "vx network",
   "sideEffects": false,
@@ -22,7 +22,7 @@
   "dependencies": {
     "@types/classnames": "^2.2.9",
     "@types/react": "*",
-    "@vx/group": "0.0.199",
+    "@vx-primitives/group": "0.0.199",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.2"
   },

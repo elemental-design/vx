@@ -1,5 +1,5 @@
 {
-  "name": "@vx/pattern",
+  "name": "@vx-primitives/pattern",
   "version": "0.0.199",
   "description": "vx pattern",
   "sideEffects": false,

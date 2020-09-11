@@ -1,5 +1,5 @@
 {
-  "name": "@vx/scale",
+  "name": "@vx-primitives/scale",
   "version": "0.0.199",
   "description": "vx scale",
   "sideEffects": false,

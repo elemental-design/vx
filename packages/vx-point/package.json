@@ -1,5 +1,5 @@
 {
-  "name": "@vx/point",
+  "name": "@vx-primitives/point",
   "version": "0.0.199",
   "description": "vx point",
   "sideEffects": false,

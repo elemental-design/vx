@@ -1,5 +1,5 @@
 {
-  "name": "@vx/voronoi",
+  "name": "@vx-primitives/voronoi",
   "version": "0.0.199",
   "description": "vx voronoi",
   "sideEffects": false,

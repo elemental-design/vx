@@ -1,5 +1,5 @@
 {
-  "name": "@vx/responsive",
+  "name": "@vx-primitives/responsive",
   "version": "0.0.199",
   "description": "vx responsive svg",
   "sideEffects": false,

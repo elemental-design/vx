@@ -1,5 +1,5 @@
 {
-  "name": "@vx/root",
+  "name": "@vx-primitives/root",
   "license": "MIT",
   "version": "0.0.0",
   "description": "Low-level visualization components",
@@ -20,8 +20,8 @@
     "build": "yarn run babel && yarn run type:dts",
     "build-one": "nimbus babel --clean",
     "babel": "yarn run babel:cjs && yarn run babel:esm",
-    "babel:cjs": "nimbus babel --clean --workspaces=\"@vx/!(demo)\"",
-    "babel:esm": "nimbus babel --clean --workspaces=\"@vx/!(demo)\" --esm",
+    "babel:cjs": "nimbus babel --clean --workspaces=\"@vx-primitives/!(demo)\"",
+    "babel:esm": "nimbus babel --clean --workspaces=\"@vx-primitives/!(demo)\" --esm",
     "clean": "rm -rf ./packages/**/{lib,esm}",
     "format": "yarn run prettier --write",
     "jest": "NODE_ENV=test nimbus jest --coverage --verbose",

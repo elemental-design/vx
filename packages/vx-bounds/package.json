@@ -1,5 +1,5 @@
 {
-  "name": "@vx/bounds",
+  "name": "@vx-primitives/bounds",
   "version": "0.0.199",
   "description": "Utilities to make your life with bounding boxes better",
   "sideEffects": false,

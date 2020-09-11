@@ -1,5 +1,5 @@
 {
-  "name": "@vx/clip-path",
+  "name": "@vx-primitives/clip-path",
   "version": "0.0.199",
   "description": "vx clip-path",
   "sideEffects": false,

@@ -1,5 +1,5 @@
 {
-  "name": "@vx/heatmap",
+  "name": "@vx-primitives/heatmap",
   "version": "0.0.199",
   "description": "vx heatmap",
   "sideEffects": false,
@@ -36,7 +36,7 @@
   "dependencies": {
     "@types/classnames": "^2.2.9",
     "@types/react": "*",
-    "@vx/group": "0.0.199",
+    "@vx-primitives/group": "0.0.199",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.1"
   }

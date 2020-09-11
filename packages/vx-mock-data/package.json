@@ -1,5 +1,5 @@
 {
-  "name": "@vx/mock-data",
+  "name": "@vx-primitives/mock-data",
   "version": "0.0.199",
   "description": "vx mock data",
   "sideEffects": false,

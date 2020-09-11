@@ -1,5 +1,5 @@
 {
-  "name": "@vx/threshold",
+  "name": "@vx-primitives/threshold",
   "version": "0.0.199",
   "description": "vx threshold",
   "sideEffects": false,
@@ -26,8 +26,8 @@
   "dependencies": {
     "@types/classnames": "^2.2.9",
     "@types/react": "*",
-    "@vx/clip-path": "0.0.199",
-    "@vx/shape": "0.0.199",
+    "@vx-primitives/clip-path": "0.0.199",
+    "@vx-primitives/shape": "0.0.199",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.10"
   },
