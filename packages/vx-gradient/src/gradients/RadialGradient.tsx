@@ -1,5 +1,6 @@
 import React from 'react';
 import { LinearGradientProps } from './LinearGradient';
+import { Stop, Defs, RadialGradient as SvgRadialGradient } from '@vx/primitives';
 
 export type RadialGradientProps = Pick<
   LinearGradientProps,
@@ -30,16 +31,16 @@ export default function RadialGradient({
   ...restProps
 }: RadialGradientProps) {
   return (
-    <defs>
-      <radialGradient
+    <Defs>
+      <SvgRadialGradient
         id={id}
         gradientTransform={rotate ? `rotate(${rotate})` : transform}
         {...restProps}
       >
         {!!children && children}
-        {!children && <stop offset={fromOffset} stopColor={from} stopOpacity={fromOpacity} />}
-        {!children && <stop offset={toOffset} stopColor={to} stopOpacity={toOpacity} />}
-      </radialGradient>
-    </defs>
+        {!children && <Stop offset={fromOffset} stopColor={from} stopOpacity={fromOpacity} />}
+        {!children && <Stop offset={toOffset} stopColor={to} stopOpacity={toOpacity} />}
+      </SvgRadialGradient>
+    </Defs>
   );
 }

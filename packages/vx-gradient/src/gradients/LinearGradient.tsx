@@ -1,4 +1,5 @@
 import React from 'react';
+import { Stop, Defs, LinearGradient as SvgLinearGradient } from '@vx/primitives';
 
 type LinearGradientOwnProps = {
   /** Unique id for the gradient. Should be unique across all page elements. */
@@ -65,8 +66,8 @@ export default function LinearGradient({
     y2 = '1';
   }
   return (
-    <defs>
-      <linearGradient
+    <Defs>
+      <SvgLinearGradient
         id={id}
         x1={x1}
         y1={y1}
@@ -76,9 +77,9 @@ export default function LinearGradient({
         {...restProps}
       >
         {!!children && children}
-        {!children && <stop offset={fromOffset} stopColor={from} stopOpacity={fromOpacity} />}
-        {!children && <stop offset={toOffset} stopColor={to} stopOpacity={toOpacity} />}
-      </linearGradient>
-    </defs>
+        {!children && <Stop offset={fromOffset} stopColor={from} stopOpacity={fromOpacity} />}
+        {!children && <Stop offset={toOffset} stopColor={to} stopOpacity={toOpacity} />}
+      </SvgLinearGradient>
+    </Defs>
   );
 }
