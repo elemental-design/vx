@@ -2,6 +2,8 @@ import React from 'react';
 import cx from 'classnames';
 import { Group } from '@vx/group';
 import { Area as AreaType, Stack as StackType, SeriesPoint, Series } from 'd3-shape';
+import { Platform, Path } from '@vx/primitives';
+
 import {
   $TSFIXME,
   AddSVGProps,
@@ -72,8 +74,8 @@ export default function Stack<Datum, Key extends StackKey = StackKey>({
   return (
     <Group top={top} left={left}>
       {stacks.map((series, i) => (
-        <path
-          className={cx('vx-stack', className)}
+        <Path
+          className={Platform.OS === 'web' && cx('vx-stack', className)}
           key={`stack-${i}-${series.key || ''}`}
           d={path(series) || ''}
           fill={color?.(series.key, i)}

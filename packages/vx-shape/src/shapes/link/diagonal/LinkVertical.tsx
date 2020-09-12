@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 import { linkVertical } from 'd3-shape';
+import { Platform, Path } from '@vx/primitives';
+
 import { SharedLinkProps, AccessorProps, AddSVGProps } from '../../../types';
 import { getX, getY, getSource, getTarget } from '../../../util/accessors';
 
@@ -37,9 +39,9 @@ export default function LinkVerticalDiagonal<Link, Node>({
   const pathGen = path || pathVerticalDiagonal({ source, target, x, y });
   if (children) return <>{children({ path: pathGen })}</>;
   return (
-    <path
+    <Path
       ref={innerRef}
-      className={cx('vx-link vx-link-vertical-diagonal', className)}
+      className={Platform.OS === 'web' && cx('vx-link vx-link-vertical-diagonal', className)}
       d={pathGen(data) || ''}
       {...restProps}
     />

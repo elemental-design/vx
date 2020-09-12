@@ -1,5 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
+import { Platform, Path } from '@vx/primitives';
+
 import { AddSVGProps, BaseAreaProps } from '../types';
 import { area } from '../util/D3ShapeFactories';
 
@@ -24,6 +26,6 @@ export default function Area<Datum>({
   // eslint-disable-next-line react/jsx-no-useless-fragment
   if (children) return <>{children({ path })}</>;
   return (
-    <path ref={innerRef} className={cx('vx-area', className)} d={path(data) || ''} {...restProps} />
+    <Path ref={innerRef} className={Platform.OS === 'web' && cx('vx-area', className)} d={path(data) || ''} {...restProps} />
   );
 }

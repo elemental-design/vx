@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 import { linkRadial } from 'd3-shape';
+import { Platform, Path } from '@vx/primitives';
+
 import { SharedLinkProps, RadialAccessorProps, AddSVGProps } from '../../../types';
 import { getX, getY, getSource, getTarget } from '../../../util/accessors';
 
@@ -41,9 +43,9 @@ export default function LinkRadialDiagonal<Link, Node>({
   const pathGen = path || pathRadialDiagonal({ source, target, angle, radius });
   if (children) return <>{children({ path: pathGen })}</>;
   return (
-    <path
+    <Path
       ref={innerRef}
-      className={cx('vx-link vx-link-radial-diagonal', className)}
+      className={Platform.OS === 'web' && cx('vx-link vx-link-radial-diagonal', className)}
       d={pathGen(data) || ''}
       {...restProps}
     />

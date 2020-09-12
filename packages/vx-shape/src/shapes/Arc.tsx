@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 import { Arc as ArcType } from 'd3-shape';
+import { Platform, Path } from '@vx/primitives';
+
 import { $TSFIXME, AddSVGProps, ArcPathConfig } from '../types';
 import { arc } from '../util/D3ShapeFactories';
 
@@ -44,6 +46,6 @@ export default function Arc<Datum>({
   if (!data) return null;
 
   return (
-    <path ref={innerRef} className={cx('vx-arc', className)} d={path(data) || ''} {...restProps} />
+    <Path ref={innerRef} className={Platform.OS === 'web' && cx('vx-arc', className)} d={path(data) || ''} {...restProps} />
   );
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 import { linkHorizontal } from 'd3-shape';
+import { Platform, Path } from '@vx/primitives';
+
 import { SharedLinkProps, AccessorProps, AddSVGProps } from '../../../types';
 import { getY, getX, getSource, getTarget } from '../../../util/accessors';
 
@@ -38,9 +40,9 @@ export default function LinkHorizontalDiagonal<Link, Node>({
   const pathGen = path || pathHorizontalDiagonal({ source, target, x, y });
   if (children) return <>{children({ path: pathGen })}</>;
   return (
-    <path
+    <Path
       ref={innerRef}
-      className={cx('vx-link vx-link-horizontal-diagonal', className)}
+      className={Platform.OS === 'web' && cx('vx-link vx-link-horizontal-diagonal', className)}
       d={pathGen(data) || ''}
       {...restProps}
     />

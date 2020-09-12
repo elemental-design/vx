@@ -1,5 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
+import { Platform, Polygon as SvgPolygon } from '@vx/primitives';
+
 import { degreesToRadians } from '../util/trigonometry';
 import { AddSVGProps } from '../types';
 
@@ -78,9 +80,9 @@ export default function Polygon({
   if (children) return <>{children({ points })}</>;
 
   return (
-    <polygon
+    <SvgPolygon
       ref={innerRef}
-      className={cx('vx-polygon', className)}
+      className={Platform.OS === 'web' && cx('vx-polygon', className)}
       points={points.join(' ')}
       {...restProps}
     />

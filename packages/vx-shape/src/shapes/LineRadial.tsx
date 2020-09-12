@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 import { RadialLine } from 'd3-shape';
+import { Platform, Path } from '@vx/primitives';
+
 import { LinePathProps } from './LinePath';
 import { AddSVGProps, RadialLinePathConfig } from '../types';
 import { radialLine } from '../util/D3ShapeFactories';
@@ -34,9 +36,9 @@ export default function LineRadial<Datum>({
   // eslint-disable-next-line react/jsx-no-useless-fragment
   if (children) return <>{children({ path })}</>;
   return (
-    <path
+    <Path
       ref={innerRef}
-      className={cx('vx-line-radial', className)}
+      className={Platform.OS === 'web' && cx('vx-line-radial', className)}
       d={path(data) || ''}
       fill={fill}
       {...restProps}
