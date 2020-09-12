@@ -1,6 +1,5 @@
-// @ts-ignore
 declare module '@vx/primitives' {
-  import { FunctionComponent, ReactNode, ComponentClass } from 'react';
+  import { ReactNode, FunctionComponent } from 'react';
   import {
     CommonPathProps,
     ImageProps,
@@ -25,26 +24,26 @@ declare module '@vx/primitives' {
   } from 'react-native-svg';
 
   // type BaseSvgElement = FunctionComponent<{ className?: string | undefined, children?: ReactNode }>
-  type BaseProps = { className?: string; ref?: any };
+  type BaseProps = { className?: string; ref?: React.Ref<any> };
 
-  export const Defs: ComponentClass<BaseProps & DefinitionProps>;
-  export const Ellipse: ComponentClass<BaseProps & EllipseProps>;
-  export const G: ComponentClass<BaseProps & GProps>;
-  export const Image: ComponentClass<BaseProps & ImageProps>;
-  export const Line: ComponentClass<BaseProps & LineProps>;
-  export const LinearGradient: ComponentClass<BaseProps & LinearGradientProps>;
-  export const Path: ComponentClass<BaseProps & PathProps>;
-  export const Pattern: ComponentClass<BaseProps & PatternProps>;
-  export const Polygon: ComponentClass<BaseProps & PolygonProps>;
-  export const Polyline: ComponentClass<BaseProps & PolylineProps>;
-  export const RadialGradient: ComponentClass<BaseProps & RadialGradientProps>;
-  export const Rect: ComponentClass<BaseProps & RectProps>;
-  export const Stop: ComponentClass<BaseProps & StopProps>;
-  export const Symbol: ComponentClass<BaseProps & SymbolProps>;
-  export const Text: ComponentClass<BaseProps & TextProps>;
-  export const TextPath: ComponentClass<BaseProps & TextPathProps>;
-  export const TSpan: ComponentClass<BaseProps & TSpanProps>;
-  export const Use: ComponentClass<BaseProps & UseProps>;
+  export const Defs: FunctionComponent<BaseProps & DefinitionProps>;
+  export const Ellipse: FunctionComponent<BaseProps & EllipseProps>;
+  export const G: FunctionComponent<BaseProps & GProps>;
+  export const Image: FunctionComponent<BaseProps & ImageProps>;
+  export const Line: FunctionComponent<BaseProps & LineProps>;
+  export const LinearGradient: FunctionComponent<BaseProps & LinearGradientProps>;
+  export const Path: FunctionComponent<BaseProps & PathProps>;
+  export const Pattern: FunctionComponent<BaseProps & PatternProps>;
+  export const Polygon: FunctionComponent<BaseProps & PolygonProps>;
+  export const Polyline: FunctionComponent<BaseProps & PolylineProps>;
+  export const RadialGradient: FunctionComponent<BaseProps & RadialGradientProps>;
+  export const Rect: FunctionComponent<BaseProps & RectProps>;
+  export const Stop: FunctionComponent<BaseProps & StopProps>;
+  export const Symbol: FunctionComponent<BaseProps & SymbolProps>;
+  export const Text: FunctionComponent<BaseProps & TextProps>;
+  export const TextPath: FunctionComponent<BaseProps & TextPathProps>;
+  export const TSpan: FunctionComponent<BaseProps & TSpanProps>;
+  export const Use: FunctionComponent<BaseProps & UseProps>;
 
   export const Platform: {
     OS: string;

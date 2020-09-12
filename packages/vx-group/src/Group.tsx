@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import { Platform, G } from '@vx/primitives';
 
 type GroupProps = {
   /** Top offset applied to `<g/>`. */
@@ -25,13 +26,13 @@ export default function Group({
   ...restProps
 }: GroupProps & Omit<React.SVGProps<SVGGElement>, keyof GroupProps>) {
   return (
-    <g
+    <G
       ref={innerRef}
-      className={cx('vx-group', className)}
+      className={Platform.OS === 'web' && cx('vx-group', className)}
       transform={transform || `translate(${left}, ${top})`}
       {...restProps}
     >
       {children}
-    </g>
+    </G>
   );
 }
