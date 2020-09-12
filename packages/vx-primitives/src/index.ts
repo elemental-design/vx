@@ -9,6 +9,7 @@ declare module '@vx/primitives' {
     PatternProps,
     EllipseProps,
     DefinitionProps,
+    CircleProps,
     SvgProps,
     PolygonProps,
     PolylineProps,
@@ -41,6 +42,7 @@ declare module '@vx/primitives' {
   export const RadialGradient: FunctionComponent<BaseProps & RadialGradientProps>;
   export const Rect: FunctionComponent<BaseProps & RectProps>;
   export const Stop: FunctionComponent<BaseProps & StopProps>;
+  export const Circle: FunctionComponent<BaseProps & CircleProps>;
   export const Symbol: FunctionComponent<BaseProps & SymbolProps>;
   export const Text: FunctionComponent<BaseProps & TextProps>;
   export const TextPath: FunctionComponent<BaseProps & TextPathProps>;
