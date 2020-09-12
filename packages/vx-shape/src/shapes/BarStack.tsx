@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { stack as d3stack, SeriesPoint } from 'd3-shape';
 import { Group } from '@vx/group';
 import { ScaleInput } from '@vx/scale';
-import { Platform, Path } from '@vx/primitives';
+import { Platform } from '@vx/primitives';
 
 import {
   PositionScale,
@@ -97,7 +97,7 @@ export default function BarStackComponent<
   if (children) return <>{children(barStacks)}</>;
 
   return (
-    <Group className={Platform.OS === 'web' && cx('vx-bar-stack', className)} top={top} left={left}>
+    <Group className={Platform.OS === 'web' ? cx('vx-bar-stack', className) : undefined} top={top} left={left}>
       {barStacks.map(barStack =>
         barStack.bars.map(bar => (
           <Bar

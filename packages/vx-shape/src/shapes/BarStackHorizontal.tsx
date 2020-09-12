@@ -89,7 +89,7 @@ export default function BarStackHorizontal<
   if (children) return <>{children(barStacks)}</>;
 
   return (
-    <Group className={Platform.OS === 'web' && cx('vx-bar-stack-horizontal', className)} top={top} left={left}>
+    <Group className={Platform.OS === 'web' ? cx('vx-bar-stack-horizontal', className) : undefined} top={top} left={left}>
       {barStacks.map(barStack =>
         barStack.bars.map(bar => (
           <Bar

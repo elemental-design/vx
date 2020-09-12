@@ -119,7 +119,7 @@ export default function BarGroupComponent<
   if (children) return <>{children(barGroups)}</>;
 
   return (
-    <Group className={Platform.OS === 'web' && cx('vx-bar-group', className)} top={top} left={left}>
+    <Group className={Platform.OS === 'web' ? cx('vx-bar-group', className) : undefined} top={top} left={left}>
       {barGroups.map(barGroup => (
         <Group key={`bar-group-${barGroup.index}-${barGroup.x0}`} left={barGroup.x0}>
           {barGroup.bars.map(bar => (
