@@ -20,11 +20,13 @@ declare module '@vx/primitives' {
     TextPathProps,
     TSpanProps,
     UseProps,
-    GProps, // @ts-ignore
+    GProps,
+    // @ts-ignore
   } from 'react-native-svg';
 
   // type BaseSvgElement = FunctionComponent<{ className?: string | undefined, children?: ReactNode }>
-  type BaseProps = { className?: string; ref?: React.Ref<any> };
+  // type BaseProps = { className?: string; ref?: React.Ref<any> };
+  type BaseProps = any;
 
   export const Defs: FunctionComponent<BaseProps & DefinitionProps>;
   export const Ellipse: FunctionComponent<BaseProps & EllipseProps>;
