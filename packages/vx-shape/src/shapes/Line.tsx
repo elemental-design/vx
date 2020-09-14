@@ -1,5 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
+import { Platform, Line as SvgLine } from '@vx/primitives';
+
 import { AddSVGProps } from '../types';
 
 interface Point {
@@ -29,9 +31,9 @@ export default function Line({
   ...restProps
 }: AddSVGProps<LineProps, SVGLineElement>) {
   return (
-    <line
+    <SvgLine
       ref={innerRef}
-      className={cx('vx-line', className)}
+      className={Platform.OS === 'web' && cx('vx-line', className)}
       x1={from.x}
       y1={from.y}
       x2={to.x}

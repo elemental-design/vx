@@ -1,5 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
+import { Platform, Path } from '@vx/primitives';
+
 import { AddSVGProps } from '../types';
 
 export type BarRoundedProps = {
@@ -78,6 +80,6 @@ z`
     .join('');
 
   return (
-    <path ref={innerRef} className={cx('vx-bar-rounded', className)} d={path} {...restProps} />
+    <Path ref={innerRef} className={Platform.OS === 'web' && cx('vx-bar-rounded', className)} d={path} {...restProps} />
   );
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
+import { Platform, Path } from '@vx/primitives';
+
 import { SharedLinkProps, AccessorProps, AddSVGProps } from '../../../types';
 import { getX, getY, getSource, getTarget } from '../../../util/accessors';
 
@@ -57,9 +59,9 @@ export default function LinkRadialStep<Link, Node>({
   const pathGen = path || pathRadialStep({ source, target, x, y });
   if (children) return <>{children({ path: pathGen })}</>;
   return (
-    <path
+    <Path
       ref={innerRef}
-      className={cx('vx-link vx-link-radial-step', className)}
+      className={Platform.OS === 'web' && cx('vx-link vx-link-radial-step', className)}
       d={pathGen(data) || ''}
       {...restProps}
     />

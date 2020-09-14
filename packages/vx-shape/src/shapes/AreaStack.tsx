@@ -1,5 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
+import { Platform, Path } from '@vx/primitives';
+
 import Stack, { StackProps } from './Stack';
 import { AddSVGProps, StackKey } from '../types';
 
@@ -67,8 +69,8 @@ export default function AreaStack<Datum, Key extends StackKey = StackKey>({
       {children ||
         (({ stacks, path }) =>
           stacks.map((series, i) => (
-            <path
-              className={cx('vx-area-stack', className)}
+            <Path
+              className={Platform.OS === 'web' && cx('vx-area-stack', className)}
               key={`area-stack-${i}-${series.key || ''}`}
               d={path(series) || ''}
               fill={color?.(series.key, i)}

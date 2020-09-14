@@ -2,6 +2,8 @@ import React from 'react';
 import cx from 'classnames';
 import { Group } from '@vx/group';
 import { ScaleInput } from '@vx/scale';
+import { Platform } from '@vx/primitives';
+
 import Bar from './Bar';
 import {
   PositionScale,
@@ -117,7 +119,7 @@ export default function BarGroupComponent<
   if (children) return <>{children(barGroups)}</>;
 
   return (
-    <Group className={cx('vx-bar-group', className)} top={top} left={left}>
+    <Group className={Platform.OS === 'web' ? cx('vx-bar-group', className) : undefined} top={top} left={left}>
       {barGroups.map(barGroup => (
         <Group key={`bar-group-${barGroup.index}-${barGroup.x0}`} left={barGroup.x0}>
           {barGroup.bars.map(bar => (

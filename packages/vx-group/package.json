@@ -35,7 +35,8 @@
     "@types/classnames": "^2.2.9",
     "@types/react": "*",
     "classnames": "^2.2.5",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "@vx/primitives": "^0.0.199"
   },
   "publishConfig": {
     "access": "public"

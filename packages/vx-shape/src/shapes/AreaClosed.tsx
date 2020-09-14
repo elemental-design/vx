@@ -1,5 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
+import { Platform, Path } from '@vx/primitives';
+
 import { PositionScale, AddSVGProps, BaseAreaProps } from '../types';
 import setNumOrAccessor from '../util/setNumberOrNumberAccessor';
 import { area } from '../util/D3ShapeFactories';
@@ -39,9 +41,9 @@ export default function AreaClosed<Datum>({
   // eslint-disable-next-line react/jsx-no-useless-fragment
   if (children) return <>{children({ path })}</>;
   return (
-    <path
+    <Path
       ref={innerRef}
-      className={cx('vx-area-closed', className)}
+      className={Platform.OS === 'web' && cx('vx-area-closed', className)}
       d={path(data) || ''}
       {...restProps}
     />

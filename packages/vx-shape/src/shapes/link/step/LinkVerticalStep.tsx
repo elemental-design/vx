@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 import { path as d3Path } from 'd3-path';
+import { Platform, Path } from '@vx/primitives';
+
 import { SharedLinkProps, AccessorProps, AddSVGProps } from '../../../types';
 import { getX, getY, getSource, getTarget } from '../../../util/accessors';
 
@@ -51,9 +53,9 @@ export default function LinkVerticalStep<Link, Node>({
   const pathGen = path || pathVerticalStep({ source, target, x, y, percent });
   if (children) return <>{children({ path: pathGen })}</>;
   return (
-    <path
+    <Path
       ref={innerRef}
-      className={cx('vx-link vx-link-vertical-step', className)}
+      className={Platform.OS === 'web' && cx('vx-link vx-link-vertical-step', className)}
       d={pathGen(data) || ''}
       {...restProps}
     />

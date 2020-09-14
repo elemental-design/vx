@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 import { Line as LineType } from 'd3-shape';
+import { Platform, Path } from '@vx/primitives';
+
 import { AddSVGProps, LinePathConfig } from '../types';
 import { line } from '../util/D3ShapeFactories';
 
@@ -33,9 +35,9 @@ export default function LinePath<Datum>({
   // eslint-disable-next-line react/jsx-no-useless-fragment
   if (children) return <>{children({ path })}</>;
   return (
-    <path
+    <Path
       ref={innerRef}
-      className={cx('vx-linepath', className)}
+      className={Platform.OS === 'web' && cx('vx-linepath', className)}
       d={path(data) || ''}
       fill={fill}
       {...restProps}

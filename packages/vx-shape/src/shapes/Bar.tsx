@@ -1,5 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
+import { Platform, Rect } from '@vx/primitives';
+
 import { AddSVGProps } from '../types';
 
 export type BarProps = {
@@ -14,5 +16,5 @@ export default function Bar({
   innerRef,
   ...restProps
 }: AddSVGProps<BarProps, SVGRectElement>) {
-  return <rect ref={innerRef} className={cx('vx-bar', className)} {...restProps} />;
+  return <Rect ref={innerRef} className={Platform.OS === 'web' && cx('vx-bar', className)} {...restProps} />;
 }
